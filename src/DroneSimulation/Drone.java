@@ -52,6 +52,13 @@ public class Drone {
         return this.droneId;
     }
 
+    /**
+     * @return The drone ID counter.
+     */
+    public int getDroneIdCounter() {
+        return droneIdCounter;
+    }
+    
     @Override
     public String toString() {
         return "Drone " + this.droneId + " is at " + this.x + ", " + this.y + " facing " + this.dir.toString() + "\n";
