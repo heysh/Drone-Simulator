@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.Scanner;
 
 /**
- *
+ * A command line interface that allows the user to create and populate a drone arena.
  * @author Harshil Surendralal bf000259
  */
 public class DroneInterface {
@@ -143,7 +143,7 @@ public class DroneInterface {
     }
 
     /**
-     * Load a drone arena and the drones within it from a file.
+     * Load a drone arena and the drones within from a file.
      */
     public void loadArena() {
         String filePath = getFilePath();

@@ -3,7 +3,7 @@ package DroneSimulation;
 import java.util.Random;
 
 /**
- *
+ * Enum class which represents the direction a drone faces.
  * @author Harshil Surendralal bf000259
  */
 public enum Direction {

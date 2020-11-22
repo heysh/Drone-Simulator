@@ -1,7 +1,7 @@
 package DroneSimulation;
 
 /**
- *
+ * A drone that can be added to the drone arena.
  * @author Harshil Surendralal bf000259
  */
 public class Drone {
@@ -58,7 +58,7 @@ public class Drone {
     public int getDroneIdCounter() {
         return droneIdCounter;
     }
-    
+
     @Override
     public String toString() {
         return "Drone " + this.droneId + " is at " + this.x + ", " + this.y + " facing " + this.dir.toString() + "\n";

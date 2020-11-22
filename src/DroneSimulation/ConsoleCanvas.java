@@ -1,7 +1,7 @@
 package DroneSimulation;
 
 /**
- *
+ * A canvas which displays a drone arena and all the drones within to the console.
  * @author Harshil Surendralal bf000259
  */
 public class ConsoleCanvas {

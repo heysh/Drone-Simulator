@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *
+ * A drone arena which is displayed on the console canvas.
  * @author Harshil Surendralal bf000259
  */
 public class DroneArena {
@@ -163,7 +163,7 @@ public class DroneArena {
     }
 
     /**
-     * Saves details about the arena and all of the drones within to a file.
+     * Saves details about the drone arena and all of the drones within to a file.
      * @param fileName The name of the file to which the data is written.
      */
     public void saveArena(String fileName) {
