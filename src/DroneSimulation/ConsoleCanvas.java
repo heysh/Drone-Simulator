@@ -11,23 +11,18 @@ public class ConsoleCanvas {
 
     /**
      *
-     * @param canvasX
-     * @param canvasY
+     * @param canvasX The width of the console canvas.
+     * @param canvasY The height of the console canvas.
      */
     public ConsoleCanvas(int canvasX, int canvasY) {
         this.canvasX = canvasX;
         this.canvasY = canvasY;
         this.canvas = new char[canvasY][canvasX];
 
+        // fill the edges of the 2D array with '#' and the rest with ' '
         for (int i = 0; i < canvasY; i++) {
             for (int j = 0; j < canvasX; j++) {
-                if (i == 0) {
-                    canvas[i][j] = '#';
-                } else if (j == 0) {
-                    canvas[i][j] = '#';
-                } else if (i == canvasY - 1) {
-                    canvas[i][j] = '#';
-                } else if (j == canvasX - 1) {
+                if (i == 0 || j == 0 || i == canvasY - 1 || j == canvasX - 1) {
                     canvas[i][j] = '#';
                 } else {
                     canvas[i][j] = ' ';
