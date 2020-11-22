@@ -10,7 +10,8 @@ public class ConsoleCanvas {
     private char[][] canvas;
 
     /**
-     *
+     * Creates an object of type ConsoleCanvas that holds the width and height of the console canvas, and the 2D array
+     * which holds the walls and the drones in the drone arena.
      * @param canvasX The width of the console canvas.
      * @param canvasY The height of the console canvas.
      */

@@ -11,7 +11,8 @@ public class Drone {
     private static int droneIdCounter = 0;
 
     /**
-     *
+     * Creates an object of type Drone that holds the drone ID, x and y co-ordinates, the direction the drone is facing,
+     * and the drone ID counter.
      * @param x The x co-ordinate of the drone.
      * @param y The y co-ordinate of the drone.
      * @param dir The direction the drone is facing.

@@ -9,11 +9,17 @@ import java.util.Random;
 public enum Direction {
     North, East, South, West;
 
+    /**
+     * @return A random cardinal direction.
+     */
     public Direction getRandomDirection() {
         Random random = new Random();
         return values()[random.nextInt(values().length)];
     }
 
+    /**
+     * @return The next cardinal direction.
+     */
     public Direction getNextDirection() {
         return values()[(ordinal() + 1) % values().length];
     }

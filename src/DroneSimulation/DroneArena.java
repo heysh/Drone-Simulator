@@ -14,7 +14,8 @@ public class DroneArena {
     private ArrayList<Drone> drones;
 
     /**
-     *
+     * Creates an object of type DroneArena that holds the arena ID, the width and height of the arena, the arena ID
+     * counter, and the list of drones in the arena.
      * @param arenaX The width of the drone arena.
      * @param arenaY The height of the drone arena.
      */

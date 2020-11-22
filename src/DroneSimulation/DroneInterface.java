@@ -13,7 +13,9 @@ public class DroneInterface {
     private DroneArena myArena;
 
     /**
-     *
+     * Creates an object of type DroneInterface which allows the user to create new drone arenas, add drones to the
+     * arena, get information about the drone arena and the drones within, display the drone arena on the screen, move
+     * the all the drones in the drone arena once or ten times, and exit the program.
      */
     public DroneInterface() {
         s = new Scanner(System.in);
