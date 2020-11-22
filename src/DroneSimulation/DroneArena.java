@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class DroneArena {
 
-    private int arenaX, arenaY, arenaId;
+    private int arenaId, arenaX, arenaY;
     private static int arenaIdCounter = 0;
     private ArrayList<Drone> drones;
 
