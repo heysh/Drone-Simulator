@@ -1,5 +1,7 @@
 package DroneSimulation;
 
+import javax.swing.*;
+import java.io.File;
 import java.util.Scanner;
 
 /**
@@ -23,20 +25,18 @@ public class DroneInterface {
 
         char ch = ' ';
         do {
-            System.out.print("Enter (C)reate new arena, (A)dd drone, get (I)nformation, (D)isplay drones, (M)ove all drones once, move all drones (T)en times, (S)ave the arena, or e(X)it > ");
+            System.out.print("Enter (C)reate new arena, (A)dd drone, get (I)nformation, (D)isplay drones, " +
+                    "(M)ove all drones once, move all drones (T)en times, (S)ave the arena, (L)oad an arena, " +
+                    "or e(X)it > ");
             ch = s.next().charAt(0);
             s.nextLine();
 
             switch (ch) {
                 case 'C':
                 case 'c':
-                    System.out.print("Enter the width of the arena > ");
-                    arenaX = s.nextInt();
-                    System.out.print("Enter the height of the arena > ");
-                    arenaY = s.nextInt();
-
+                    arenaX = getArenaX();
+                    arenaY = getArenaY();
                     myArena = new DroneArena(arenaX, arenaY);
-
                     break;
                 case 'A':
                 case 'a':
@@ -75,6 +75,10 @@ public class DroneInterface {
                     fileName = s.next();
                     myArena.saveArena(fileName);
                     break;
+                case 'L':
+                case 'l':
+                    loadArena();
+                    break;
                 case 'x':
                     ch = 'X';
                     break;
@@ -97,5 +101,106 @@ public class DroneInterface {
 
         this.myArena.showDrones(c);
         System.out.println(c.toString());
+    }
+
+    /**
+     * @return The width of the drone arena the user wishes to set.
+     */
+    public int getArenaX() {
+        int arenaX;
+
+        do {
+            System.out.print("Enter the width of the arena > ");
+            arenaX = this.s.nextInt();
+        } while (arenaX < 1);
+
+        return arenaX;
+    }
+
+    /**
+     * @return The height of the drone arena the user wishes to set.
+     */
+    public int getArenaY() {
+        int arenaY;
+
+        do {
+            System.out.print("Enter the height of the arena > ");
+            arenaY = this.s.nextInt();
+        } while (arenaY < 1);
+
+        return arenaY;
+    }
+
+    /**
+     * @return The file path of the drone arena the user wishes to load.
+     */
+    public String getFilePath() {
+        String filePath;
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(chooser.getParent());
+        filePath = chooser.getSelectedFile().getAbsolutePath();
+        return filePath;
+    }
+
+    /**
+     * Load a drone arena and the drones within it from a file.
+     */
+    public void loadArena() {
+        String filePath = getFilePath();
+        Scanner s;
+
+        int x, y, arenaX, arenaY;
+        String dir, string;
+        Direction direction = Direction.North;
+        Drone d;
+        DroneArena a = new DroneArena(-1, -1);
+
+        try {
+            s = new Scanner(new File(filePath));
+
+            // while there are still characters left in the file
+            while (s.hasNext()) {
+                string = s.next();
+
+                // if the object is a drone arena, extract the width and height values, and thus create a new DroneArena
+                // object
+                if (string.equals("arenaId")) {
+                    s.next();
+                    s.next();
+                    arenaX = s.nextInt();
+                    s.next();
+                    arenaY = s.nextInt();
+                    a = new DroneArena(arenaX, arenaY);
+
+                // if the object is a drone, extract the x and y co-ordinates, and the direction
+                // create a new Drone object from these values, and add this drone to the drone arena
+                } else if (string.equals("droneId")) {
+                    s.next();
+                    s.next();
+                    x = s.nextInt();
+                    s.next();
+                    y = s.nextInt();
+                    s.next();
+                    dir = s.next();
+
+                    // convert the string to an object of type Direction
+                    while (!direction.toString().equals(dir)) {
+                        direction = direction.getNextDirection();
+                    }
+
+                    d = new Drone(x, y, direction);
+                    a.addDrone(d);
+                }
+            }
+
+            // replace the current drone arena with the new one
+            this.myArena = a;
+
+        } catch (Exception e) {
+
+            // display an error if there was a problem opening the file
+            System.out.println("An error has occurred opening the file.");
+            e.printStackTrace();
+        }
     }
 }

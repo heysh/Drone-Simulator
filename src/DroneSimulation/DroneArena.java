@@ -1,9 +1,12 @@
 package DroneSimulation;
 
+import javax.swing.*;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -57,6 +60,20 @@ public class DroneArena {
     }
 
     /**
+     * @param arenaId The arena ID that is to be set.
+     */
+    public void setArenaId(int arenaId) {
+        this.arenaId = arenaId;
+    }
+
+    /**
+     * @param d The drone that is to be added to the drone arena.
+     */
+    public void addDrone(Drone d) {
+        this.drones.add(d);
+    }
+
+    /**
      * Add a drone in a random, empty location in the drone arena.
      */
     public void addDrone() {
@@ -89,7 +106,7 @@ public class DroneArena {
 
     @Override
     public String toString() {
-        String output = "Arena " + this.arenaId + " has a width of " + this.arenaX + " and a height of " + this.arenaY + "\n";
+        String output = "Arena has a width of " + this.arenaX + " and a height of " + this.arenaY + "\n";
 
         for (Drone d : this.drones) output += d.toString();
 
@@ -158,17 +175,20 @@ public class DroneArena {
         try {
             FileWriter fw = new FileWriter(fileName);
 
+            // write the details about the drone arena in the file
+            s = "arenaId " + this.arenaId + "\narenaX " + this.arenaX+ "\narenaY " + this.arenaY + "\n";
+            fw.write(s);
+
+            // write the details about each drone in the file
             for (Drone d : this.getDrones()) {
-                s = "droneId," + d.getDroneId() + "\nx," + d.getX() + "\ny," + d.getY() + "\ndir," + d.getDir() +
-                        "\ndroneIdCounter," + d.getDroneIdCounter() + "\n";
+                s = "droneId " + d.getDroneId() + "\nx " + d.getX() + "\ny " + d.getY() + "\ndir " + d.getDir() + "\n";
                 fw.write(s);
             }
 
-            s = "arenaId," + this.arenaId + "\narenaX," + this.arenaX+ "\narenaY," + this.arenaY +
-                    "\narenaIdCounter," + arenaIdCounter + "\n";
-            fw.write(s);
             fw.close();
         } catch (IOException e) {
+
+            // display an error if there was a problem saving to the file
             System.out.println("An error has occurred saving to the file.");
             e.printStackTrace();
         }
