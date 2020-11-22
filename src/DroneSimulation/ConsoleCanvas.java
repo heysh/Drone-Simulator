@@ -57,10 +57,6 @@ public class ConsoleCanvas {
      * @param c The console canvas to which the drone is added.
      */
     public void showIt(int x, int y, char c) {
-//        // if the co-ordinates are within the walls of the console canvas
-//        if (x >= 0 && x <= this.canvasX - 3 && y >= 0 && y <= this.canvasY - 3) {
-//            this.canvas[y + 1][x + 1] = c;
-//        }
         this.canvas[y + 1][x + 1] = c;
     }
 
