@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class DroneInterface {
 
     private int arenaX, arenaY;
+    private String fileName;
     private Scanner s;
     private DroneArena myArena;
 
@@ -22,7 +23,7 @@ public class DroneInterface {
 
         char ch = ' ';
         do {
-            System.out.print("Enter (C)reate new arena, (A)dd drone, get (I)nformation, (D)isplay drones, (M)ove all drones once, move all drones (T)en times, or e(X)it > ");
+            System.out.print("Enter (C)reate new arena, (A)dd drone, get (I)nformation, (D)isplay drones, (M)ove all drones once, move all drones (T)en times, (S)ave the arena, or e(X)it > ");
             ch = s.next().charAt(0);
             s.nextLine();
 
@@ -67,6 +68,12 @@ public class DroneInterface {
                             Thread.currentThread().interrupt();
                         }
                     }
+                    break;
+                case 'S':
+                case 's':
+                    System.out.print("Enter the name of the file > ");
+                    fileName = s.next();
+                    myArena.saveArena(fileName);
                     break;
                 case 'x':
                     ch = 'X';

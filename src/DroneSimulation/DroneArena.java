@@ -1,5 +1,7 @@
 package DroneSimulation;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -144,5 +146,31 @@ public class DroneArena {
      */
     public void moveAllDrones() {
         for (Drone d : this.drones) d.tryToMove(this);
+    }
+
+    /**
+     * Saves details about the arena and all of the drones within to a file.
+     * @param fileName The name of the file to which the data is written.
+     */
+    public void saveArena(String fileName) {
+        String s = "";
+
+        try {
+            FileWriter fw = new FileWriter(fileName);
+
+            for (Drone d : this.getDrones()) {
+                s = "droneId," + d.getDroneId() + "\nx," + d.getX() + "\ny," + d.getY() + "\ndir," + d.getDir() +
+                        "\ndroneIdCounter," + d.getDroneIdCounter() + "\n";
+                fw.write(s);
+            }
+
+            s = "arenaId," + this.arenaId + "\narenaX," + this.arenaX+ "\narenaY," + this.arenaY +
+                    "\narenaIdCounter," + arenaIdCounter + "\n";
+            fw.write(s);
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("An error has occurred saving to the file.");
+            e.printStackTrace();
+        }
     }
 }
