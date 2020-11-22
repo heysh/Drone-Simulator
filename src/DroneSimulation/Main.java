@@ -60,8 +60,20 @@ public class Main {
 //
 //        // 4.4 Methods tryToMove, canMoveHere, moveAllDrones
 //        DroneInterface r = new DroneInterface();
+//
+//        // 4.5 Animation
+//        DroneInterface r = new DroneInterface();
+//
+//        // 5.2 Save file
+//        DroneArena a = new DroneArena(20, 6);
+//        a.addDrone();
+//        a.addDrone();
+//        a.addDrone();
+//        a.addDrone();
+//        a.saveArena("test.data");
+//        DroneInterface r = new DroneInterface();
 
-        // 4.5 Animation
+        // 5.3 Load file
         DroneInterface r = new DroneInterface();
     }
 }
