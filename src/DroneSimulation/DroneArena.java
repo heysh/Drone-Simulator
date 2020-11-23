@@ -173,12 +173,12 @@ public class DroneArena {
             FileWriter fw = new FileWriter(fileName);
 
             // write the details about the drone arena in the file
-            s = "arenaId " + this.arenaId + "\narenaX " + this.arenaX+ "\narenaY " + this.arenaY + "\n";
+            s = "arena " + this.arenaX+ " " + this.arenaY + "\n";
             fw.write(s);
 
             // write the details about each drone in the file
             for (Drone d : this.getDrones()) {
-                s = "droneId " + d.getDroneId() + "\nx " + d.getX() + "\ny " + d.getY() + "\ndir " + d.getDir() + "\n";
+                s = "drone " + d.getX() + " " + d.getY() + " " + d.getDir() + "\n";
                 fw.write(s);
             }
 

@@ -164,23 +164,16 @@ public class DroneInterface {
 
                 // if the object is a drone arena, extract the width and height values, and thus create a new DroneArena
                 // object
-                if (string.equals("arenaId")) {
-                    s.next();
-                    s.next();
+                if (string.equals("arena")) {
                     arenaX = s.nextInt();
-                    s.next();
                     arenaY = s.nextInt();
                     a = new DroneArena(arenaX, arenaY);
 
                 // if the object is a drone, extract the x and y co-ordinates, and the direction
                 // create a new Drone object from these values, and add this drone to the drone arena
-                } else if (string.equals("droneId")) {
-                    s.next();
-                    s.next();
+                } else if (string.equals("drone")) {
                     x = s.nextInt();
-                    s.next();
                     y = s.nextInt();
-                    s.next();
                     dir = s.next();
 
                     // convert the string to an object of type Direction
