@@ -136,10 +136,18 @@ public class DroneInterface {
      */
     public String getFilePath() {
         String filePath;
+        JFrame jf = new JFrame("Dialog");
+        jf.setAlwaysOnTop(true);
         JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(chooser.getParent());
-        filePath = chooser.getSelectedFile().getAbsolutePath();
-        return filePath;
+        int response = chooser.showOpenDialog(jf);
+        jf.dispose();
+
+        if (response == JFileChooser.APPROVE_OPTION) {
+            filePath = chooser.getSelectedFile().getAbsolutePath();
+            return filePath;
+        } else {
+            return null;
+        }
     }
 
     /**
