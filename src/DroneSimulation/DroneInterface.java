@@ -225,7 +225,6 @@ public class DroneInterface {
 
             // display an error if there was a problem opening the file
             System.out.println("An error has occurred opening the file.");
-            e.printStackTrace();
         }
     }
 }
