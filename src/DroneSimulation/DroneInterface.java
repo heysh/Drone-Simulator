@@ -40,40 +40,64 @@ public class DroneInterface {
                     break;
                 case 'A':
                 case 'a':
-                    myArena.addDrone();
+                    if (!(myArena == null)) {
+                        myArena.addDrone();
+                    } else {
+                        System.out.println("You must first create or load an arena.");
+                    }
                     break;
                 case 'I':
                 case 'i':
-                    System.out.print(myArena.toString());
+                    if (!(myArena == null)) {
+                        System.out.print(myArena.toString());
+                    } else {
+                        System.out.println("You must first create or load an arena.");
+                    }
                     break;
                 case 'D':
                 case 'd':
-                    doDisplay();
+                    if (!(myArena == null)) {
+                        doDisplay();
+                    } else {
+                        System.out.println("You must first create or load an arena.");
+                    }
                     break;
                 case 'M':
                 case 'm':
-                    myArena.moveAllDrones();
-                    doDisplay();
+                    if (!(myArena == null)) {
+                        myArena.moveAllDrones();
+                        doDisplay();
+                    } else {
+                        System.out.println("You must first create or load an arena.");
+                    }
                     break;
                 case 'T':
                 case 't':
-                    for (int i = 0; i < 10; i++) {
-                        myArena.moveAllDrones();
-                        doDisplay();
-                        System.out.println(myArena.toString());
+                    if (!(myArena == null)) {
+                        for (int i = 0; i < 10; i++) {
+                            myArena.moveAllDrones();
+                            doDisplay();
+                            System.out.println(myArena.toString());
 
-                        try {
-                            Thread.sleep(200);
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
+                            try {
+                                Thread.sleep(200);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
                         }
+                    } else {
+                        System.out.println("You must first create or load an arena.");
                     }
                     break;
                 case 'S':
                 case 's':
-                    System.out.print("Enter the name of the file > ");
-                    fileName = s.next();
-                    myArena.saveArena(fileName);
+                    if (!(myArena == null)) {
+                        System.out.print("Enter the name of the file > ");
+                        fileName = s.next();
+                        myArena.saveArena(fileName);
+                    } else {
+                        System.out.println("You must first create or load an arena.");
+                    }
                     break;
                 case 'L':
                 case 'l':
