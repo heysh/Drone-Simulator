@@ -187,7 +187,6 @@ public class DroneArena {
 
             // display an error if there was a problem saving to the file
             System.out.println("An error has occurred saving to the file.");
-            e.printStackTrace();
         }
     }
 }
