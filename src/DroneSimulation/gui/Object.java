@@ -2,7 +2,7 @@ package DroneSimulation.gui;
 
 /**
  * A base class from which drones and obstacles inherit.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public abstract class Object {
 

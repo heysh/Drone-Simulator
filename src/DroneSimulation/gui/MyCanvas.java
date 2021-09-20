@@ -4,7 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 
 /**
  * A canvas on which objects are to be drawn.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class MyCanvas {
 

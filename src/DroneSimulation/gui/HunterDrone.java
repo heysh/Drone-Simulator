@@ -6,7 +6,7 @@ import javafx.scene.shape.ArcType;
 
 /**
  * A hunter drone that can be added to the drone arena.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class HunterDrone extends Object {
 

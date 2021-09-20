@@ -7,7 +7,7 @@ import java.util.Random;
 
 /**
  * A drone arena which is displayed on the console canvas.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class DroneArena {
 

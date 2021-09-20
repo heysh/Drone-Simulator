@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * A command line interface that allows the user to create and populate a drone arena.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class DroneInterface {
 

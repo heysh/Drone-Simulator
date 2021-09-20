@@ -2,7 +2,7 @@ package DroneSimulation;
 
 /**
  * A drone that can be added to the drone arena.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class Drone {
 

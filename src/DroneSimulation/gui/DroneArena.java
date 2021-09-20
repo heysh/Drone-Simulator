@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  * A drone arena which contains objects, all of which are to be drawn on the canvas.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class DroneArena {
 

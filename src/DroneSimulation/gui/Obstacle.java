@@ -6,7 +6,7 @@ import javafx.scene.shape.ArcType;
 
 /**
  * An obstacle which can be added to the drone arena.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class Obstacle extends Object {
 

@@ -4,7 +4,7 @@ import javafx.application.Application;
 
 /**
  * Class to invoke the Drone Simulator GUI.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class Main {
 

@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 
 /**
  * Class that is responsible for handling the GUI aspect of the Drone Simulator.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class GUI extends Application {
 

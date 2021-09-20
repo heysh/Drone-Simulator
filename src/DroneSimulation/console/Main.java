@@ -2,7 +2,7 @@ package DroneSimulation;
 
 /**
  * Driver program of DroneSimulation.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public class Main {
 

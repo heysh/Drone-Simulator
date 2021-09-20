@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * Enum class which represents the direction a drone faces.
- * @author Harshil Surendralal bf000259
+ * @author Harshil Surendralal
  */
 public enum Direction {
     North, East, South, West;
